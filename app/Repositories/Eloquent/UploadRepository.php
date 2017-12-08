@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Events\PhotoWasDeleted;
-use App\Events\PhotoWasUploaded;
+use App\Modules\Admin\Events\PhotoWasDeleted;
+use App\Modules\Admin\Events\PhotoWasUploaded;
 use Intervention\Image\ImageManager;
 use App\Models\Photo;
 use Event;

@@ -28,6 +28,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
     Route::group(['middleware' => ['can_login']], function(){
 
       Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'DashboardController@index']);
+
+      /*CONFIG*/
+      Route::any('/config', ['as' => 'admin.config','uses'=> 'ConfigController@index']);
       //   PORFILE
       Route::get('/profile', ['as' => 'admin.profile.index', 'uses' => 'ProfileController@index']);
 

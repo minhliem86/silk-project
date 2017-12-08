@@ -27,6 +27,13 @@ abstract class BaseRepository implements RestfulInterface{
   {
       return $this->model->with($with);
   }
+
+  /*GET QUERY BUILDER*/
+  public function query($columns = ['*'], $with = [])
+  {
+      $query = $this->make($with);
+      return $query->select($columns);
+  }
   /**
  	 * GET ALL
  	 *
@@ -75,7 +82,7 @@ abstract class BaseRepository implements RestfulInterface{
  */
   public function findByField($field, $value, $columns = array('*'))
   {
-    return $this->model->where($field,'=',$value)->get($columns);
+    return $this->model->where($field,'=',$value)->select($columns);
   }
 /**
 	 * WHERE IN
