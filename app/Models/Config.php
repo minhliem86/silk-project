@@ -9,5 +9,5 @@ class Config extends Model
 
     public $primaryKey = 'title';
 
-    protected $fillable = ['title', 'ga_id'];
+    protected $fillable = ['title', 'ga_id', 'ga_json'];
 }
